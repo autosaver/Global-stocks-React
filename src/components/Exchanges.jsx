@@ -1,7 +1,6 @@
 import { Card, Col, Row } from 'antd';
 import millify from 'millify';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useGetCryptoExchangesQuery } from '../services/cryptoApi';
 
 
@@ -29,7 +28,7 @@ const Exchanges = () => {
     {
       exchanges?.map((exchange)=>{ return (
         <Col xs={24} sm={12} lg={6} className="crypto-card" key={exchange.uuid}>
-            <a href={exchange.coinrankingUrl} target="_blank">
+            <a href={exchange.coinrankingUrl} target="_blank" rel="noreferrer">
               <Card
                 title={`${exchange.rank}. ${exchange.name}`}
                 extra={<img className="crypto-image" src={exchange.iconUrl} alt='...'/>}
